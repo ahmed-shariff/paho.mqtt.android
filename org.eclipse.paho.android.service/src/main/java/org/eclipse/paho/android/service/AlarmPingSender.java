@@ -76,7 +76,7 @@ class AlarmPingSender implements MqttPingSender {
 		pendingIntent = PendingIntent.getBroadcast(service, 0, new Intent(
 				action), PendingIntent.FLAG_UPDATE_CURRENT);
 
-		schedule(comms.getKeepAlive());
+		schedule(comms.getKeepAlive() - 20000);
 		hasStarted = true;
 	}
 
